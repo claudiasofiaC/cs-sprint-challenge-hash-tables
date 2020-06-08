@@ -2,7 +2,21 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    dic = {}
+    result = []
+
+    for num in arrays[0]:
+        dic[num] = 1
+
+    for array in arrays[1:]:
+        for num in array:
+            if num in dic:
+                dic[num] += 1
+
+    for key in dic:
+        if dic[key] == len(arrays):
+            result.append(key)
+
 
     return result
 
